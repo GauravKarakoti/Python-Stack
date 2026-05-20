@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Curriculum</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Learn Python</h1>
+    </header>
+    
+    <div class="container">
+        <!-- Wrapper to handle the sliding sidebar and attached button -->
+        <div class="sidebar-wrapper" id="sidebar-wrapper">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Course Curriculum</h3>
+                </div>
+                <nav>
+                    <ul id="curriculum-list">
+                        <!-- Populated dynamically -->
+                    </ul>
+                </nav>
+            </aside>
+            <!-- Hamburger button moves with the wrapper -->
+            <button class="hamburger-btn" id="hamburger-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <main class="content" id="main-content">
+            <div class="content-inner">
+                <h2>Welcome to the Python Curriculum</h2>
+                <p>Select a topic from the sidebar on the left to view its description.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="./assets/js/main.js" type="module"></script>
+</body>
+</html>

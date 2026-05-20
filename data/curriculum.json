@@ -1,0 +1,47 @@
+[
+    {
+        "section": "Getting Started",
+        "topics": [
+            {
+                "id": "intro",
+                "title": "Introduction to Python",
+                "description": "Python is a high-level, interpreted programming language known for its readability and versatility. It is widely used in web development, data science, AI, and automation scripts."
+            },
+            {
+                "id": "setup",
+                "title": "Environment Setup",
+                "description": "Learn how to install Python, set up virtual environments using venv, and configure your code editor for optimal Python development."
+            }
+        ]
+    },
+    {
+        "section": "Core Concepts",
+        "topics": [
+            {
+                "id": "variables",
+                "title": "Variables & Data Types",
+                "description": "In Python, you don't need to declare variable types explicitly. Core data types include Integers, Floats, Strings, Booleans, Lists, Tuples, and Dictionaries."
+            },
+            {
+                "id": "controlFlow",
+                "title": "Control Flow",
+                "description": "Control flow structures dictate the execution path of your program. They include if-elif-else statements for conditional logic, and for/while loops for iterating over sequences."
+            }
+        ]
+    },
+    {
+        "section": "Intermediate Python",
+        "topics": [
+            {
+                "id": "functions",
+                "title": "Functions & Scope",
+                "description": "Functions are reusable blocks of code defined using the 'def' keyword. They help modularize your code, keep it DRY, and establish local vs global variable scopes."
+            },
+            {
+                "id": "oop",
+                "title": "Object-Oriented Programming",
+                "description": "Python fully supports OOP concepts. You can define classes, create objects, and utilize inheritance, polymorphism, and encapsulation to structure complex applications."
+            }
+        ]
+    }
+]
