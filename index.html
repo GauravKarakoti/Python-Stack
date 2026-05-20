@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Curriculum</title>
+    <title>Python Stack</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Learn Python</h1>
+        <h1>Python Stack</h1>
     </header>
     
     <div class="container">
-        <!-- Wrapper to handle the sliding sidebar and attached button -->
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <aside class="sidebar">
                 <div class="sidebar-header">
@@ -20,11 +19,40 @@
                 </div>
                 <nav>
                     <ul id="curriculum-list">
-                        <!-- Populated dynamically -->
+                        <li class="section-title">Getting Started</li>
+                        <li class="topic-item active" data-id="basics/introduction">Introduction to Python</li>
+                        
+                        <li class="section-title">Core Concepts</li>
+                        <li class="topic-item" data-id="basics/variables">Variables</li>
+                        <li class="topic-item" data-id="basics/datatypes">Data Types</li>
+                        <li class="topic-item" data-id="basics/operators">Operators</li>
+                        <li class="topic-item" data-id="basics/conditionals">Conditionals</li>
+                        <li class="topic-item" data-id="basics/loops">Loops</li>
+                        <li class="topic-item" data-id="basics/functions">Functions</li>
+                        
+                        <li class="section-title">Intermediate Python</li>
+                        <li class="topic-item" data-id="intermediate/oops">Object-Oriented Programming</li>
+                        <li class="topic-item" data-id="intermediate/modules">Modules</li>
+                        <li class="topic-item" data-id="intermediate/file-handling">File Handling</li>
+                        <li class="topic-item" data-id="intermediate/exception-handling">Exception Handling</li>
+                        <li class="topic-item" data-id="intermediate/decorators">Decorators</li>
+                        <li class="topic-item" data-id="intermediate/generators">Generators</li>
+                        <li class="section-title">Advanced Python</li>
+                        <li class="topic-item" data-id="advanced/multithreading">MultiThreading</li>
+                        <li class="topic-item" data-id="advanced/multiprocessing">MultiProcessing</li>
+                        <li class="topic-item" data-id="advanced/asyncio">Async IO</li>
+                        <li class="topic-item" data-id="advanced/flask">Flask</li>
+                        <li class="topic-item" data-id="advanced/django">DJANGO</li>
+                        <li class="topic-item" data-id="advanced/api">APIs</li>
+                        <li class="topic-item" data-id="advanced/database">Database</li>
+                        <li class="section-title">Projects</li>
+                        <li class="topic-item" data-id="projects/calculator">Calculator</li>
+                        <li class="topic-item" data-id="projects/weather-app">Weather App</li>
+                        <li class="topic-item" data-id="projects/chatbot">ChatBot</li>
+                        <li class="topic-item" data-id="projects/web-scraper">Web Scraper</li>
                     </ul>
                 </nav>
             </aside>
-            <!-- Hamburger button moves with the wrapper -->
             <button class="hamburger-btn" id="hamburger-btn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -36,12 +64,15 @@
         
         <main class="content" id="main-content">
             <div class="content-inner">
-                <h2>Welcome to the Python Curriculum</h2>
+                <h2>Welcome to the Python Stack</h2>
                 <p>Select a topic from the sidebar on the left to view its description.</p>
             </div>
         </main>
     </div>
 
-    <script src="./assets/js/main.js" type="module"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
+<footer>
+    <p>&copy; 2026 Gaurav Karakoti, Learning Python</p>
+</footer>
 </html>
