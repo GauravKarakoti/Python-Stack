@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Variables</title>
+
+    <link rel="stylesheet" href="../../assets/css/variables.css" />
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Python Variables</h1>
+        <p>
+            Learn how Python stores and manages data using variables.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Introduction -->
+        <section class="card">
+            <h2>What are Variables?</h2>
+
+            <p>
+                Variables are containers used to store data values in a program.
+            </p>
+
+            <p>
+                In Python, you do not need to declare the type of a variable.
+                Python automatically determines the data type based on the value assigned.
+            </p>
+
+            <div class="info-box">
+                <strong>Example:</strong>
+                A variable can store numbers, text, lists, and many other types of data.
+            </div>
+        </section>
+
+        <!-- Creating Variables -->
+        <section class="card">
+            <h2>Creating Variables in Python</h2>
+
+            <p>
+                Variables are created when you assign a value using the <strong>=</strong> operator.
+            </p>
+
+            <div class="code-box">
+<pre>
+name = "Gaurav"
+age = 20
+height = 5.9
+
+print(name)
+print(age)
+print(height)
+</pre>
+            </div>
+        </section>
+
+        <!-- Rules -->
+        <section class="card">
+            <h2>Rules for Naming Variables</h2>
+
+            <ul>
+                <li>Variable names must start with a letter or underscore (_)</li>
+                <li>They cannot start with a number</li>
+                <li>Variable names are case-sensitive</li>
+                <li>Spaces are not allowed</li>
+                <li>Use meaningful variable names</li>
+            </ul>
+
+            <div class="code-container">
+
+                <div class="code-box">
+                    <h3>Valid Variables</h3>
+
+<pre>
+username = "Alex"
+_age = 21
+user1 = "John"
+</pre>
+                </div>
+
+                <div class="code-box">
+                    <h3>Invalid Variables</h3>
+
+<pre>
+1name = "Alex"
+user-name = "John"
+first name = "Sam"
+</pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Multiple Assignment -->
+        <section class="card">
+            <h2>Multiple Variable Assignment</h2>
+
+            <p>
+                Python allows assigning multiple values in a single line.
+            </p>
+
+            <div class="code-box">
+<pre>
+x, y, z = 10, 20, 30
+
+print(x)
+print(y)
+print(z)
+</pre>
+            </div>
+        </section>
+
+        <!-- Changing Values -->
+        <section class="card">
+            <h2>Changing Variable Values</h2>
+
+            <p>
+                Variables can be updated anytime during program execution.
+            </p>
+
+            <div class="code-box">
+<pre>
+score = 50
+
+print(score)
+
+score = 100
+
+print(score)
+</pre>
+            </div>
+        </section>
+
+        <!-- Variable Types -->
+        <section class="card">
+            <h2>Common Data Types in Variables</h2>
+
+            <div class="grid">
+
+                <div class="feature-box">
+                    <h3>Integer</h3>
+                    <p>Stores whole numbers.</p>
+
+<pre>
+age = 20
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Float</h3>
+                    <p>Stores decimal numbers.</p>
+
+<pre>
+price = 99.99
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>String</h3>
+                    <p>Stores text values.</p>
+
+<pre>
+name = "Python"
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Boolean</h3>
+                    <p>Stores True or False.</p>
+
+<pre>
+isActive = True
+</pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="card">
+            <h2>Best Practices</h2>
+
+            <ul>
+                <li>Use descriptive variable names</li>
+                <li>Avoid single-letter variable names</li>
+                <li>Use snake_case naming style</li>
+                <li>Keep variable names short but meaningful</li>
+            </ul>
+        </section>
+
+        <!-- Interactive Button -->
+        <section class="center">
+            <button id="variableBtn">
+                Learn More About Variables
+            </button>
+        </section>
+
+    </main>
+</body>
+</html>
