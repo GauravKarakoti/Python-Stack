@@ -2,20 +2,17 @@ const mainContent = document.querySelector('.content-inner');
 const sidebarWrapper = document.getElementById('sidebar-wrapper');
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const topicItems = document.querySelectorAll('.topic-item');
+
 call("basics/introduction", "Introduction to Python");
+
 // Toggle Sidebar Logic
 hamburgerBtn.addEventListener('click', () => {
     sidebarWrapper.classList.toggle('collapsed');
 });
+
 async function call(topicId, topicTitle) {
-    // 1. Grab the scrollable container
     const scrollContainer = document.getElementById('main-content');
     
-    // 2. Instantly reset the scrollbar to the very top
-    if (scrollContainer) {
-        scrollContainer.scrollTop = 0;
-    }
-
     mainContent.innerHTML = `<p style="color: #666;">Loading ${topicTitle}...</p>`;
 
     try {
@@ -27,10 +24,38 @@ async function call(topicId, topicTitle) {
         
         const htmlData = await response.text();
         
-        // 3. Add lazy loading AND block focus-stealing using tabindex
-        const optimizedHtml = htmlData.replace(/<iframe /g, '<iframe loading="lazy" tabindex="-1" ');
+        // 1. Temporarily replace 'src' with 'data-src' so iframes don't load immediately
+        const optimizedHtml = htmlData
+            .replace(/<iframe /g, '<iframe tabindex="-1" ')
+            .replace(/ src="/g, ' data-src="');
         
         mainContent.innerHTML = optimizedHtml;     
+
+        // 2. Reset the scrollbar AFTER the new content is injected into the DOM
+        if (scrollContainer) {
+            scrollContainer.scrollTop = 0;
+        }
+
+        // 3. Use an IntersectionObserver to strictly load iframes only when scrolled into view
+        const iframes = mainContent.querySelectorAll('iframe[data-src]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target;
+                    // Assign the actual URL to trigger the iframe load
+                    iframe.src = iframe.getAttribute('data-src');
+                    iframe.removeAttribute('data-src');
+                    // Stop observing once loaded so it doesn't reload
+                    observer.unobserve(iframe); 
+                }
+            });
+        }, { 
+            root: scrollContainer,
+            rootMargin: '50px' // Load when the iframe is 50px away from the viewport
+        });
+
+        iframes.forEach(iframe => observer.observe(iframe));
+
     } catch (error) {
         console.error("Error fetching the page:", error);
         mainContent.innerHTML = `
@@ -39,6 +64,7 @@ async function call(topicId, topicTitle) {
         `;
     }
 }
+
 // Attach click listeners to the hardcoded sidebar items
 topicItems.forEach(li => {
     li.addEventListener('click', async () => {
