@@ -8,10 +8,17 @@ hamburgerBtn.addEventListener('click', () => {
     sidebarWrapper.classList.toggle('collapsed');
 });
 async function call(topicId, topicTitle) {
+    // 1. Grab the scrollable container
+    const scrollContainer = document.getElementById('main-content');
+    
+    // 2. Instantly reset the scrollbar to the very top
+    if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
+    }
+
     mainContent.innerHTML = `<p style="color: #666;">Loading ${topicTitle}...</p>`;
 
     try {
-        // Fetch the corresponding HTML file (e.g., ./pages/intro.html)
         const response = await fetch(`./pages/${topicId}.html`);
         
         if (!response.ok) {
@@ -20,15 +27,15 @@ async function call(topicId, topicTitle) {
         
         const htmlData = await response.text();
         
-        // Inject the fetched HTML into the description div
-        mainContent.innerHTML = htmlData;     
+        // 3. Add lazy loading AND block focus-stealing using tabindex
+        const optimizedHtml = htmlData.replace(/<iframe /g, '<iframe loading="lazy" tabindex="-1" ');
+        
+        mainContent.innerHTML = optimizedHtml;     
     } catch (error) {
         console.error("Error fetching the page:", error);
         mainContent.innerHTML = `
             <h2>${topicTitle}</h2>
             <p style="color: #e53e3e; font-weight: bold;">Error: ${error.message}</p>
-            <hr style="margin: 20px 0; border: 1px solid #eee;" />
-            <p><em>Make sure you have created the file <code>pages/${topicId}.html</code>.</em></p>
         `;
     }
 }

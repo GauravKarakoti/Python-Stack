@@ -6,6 +6,34 @@
     color: #e0e0e0;
     line-height: 1.8;
     background: transparent;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-wrapper iframe {
+    display: block;
+    width: 100%;
+    border-radius: 8px; /* Matches your theme's rounded corners */
+    background-color: #333333;
+    overflow-anchor: none;
+    /* Animated Shimmer Effect */
+    background-image: linear-gradient(
+        90deg, 
+        #333333 0px, 
+        #444444 40px, 
+        #333333 80px
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 /* ================= HERO SECTION ================= */
