@@ -101,26 +101,6 @@ pre {
     font-family: monospace;
 }
 
-.center {
-    text-align: center;
-}
-
-#learnBtn {
-    padding: 14px 28px;
-    background: #2563eb;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#learnBtn:hover {
-    background: #1d4ed8;
-    transform: scale(1.05);
-}
-
 @media (max-width: 768px) {
     .intro-hero h1 { font-size: 2rem; }
     .intro-card { padding: 20px; }
