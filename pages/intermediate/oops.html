@@ -1,0 +1,84 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Object-Oriented Programming (OOP)</h1>
+        <p>Learn how to structure your code using Classes and Objects in Python.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is OOP?</h2>
+            <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around data, or objects, rather than functions and logic.</p>
+            <div class="info-box">
+                <strong>Key Concept:</strong> A <strong>Class</strong> is a blueprint. An <strong>Object</strong> is the actual item built from that blueprint.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Creating a Class and Object</h2>
+            <p>You can create a class using the <strong>class</strong> keyword, and an initialization method called <code>__init__</code>.</p>
+            <iframe src="https://trinket.io/embed/python/eb3192739355" width="100%" height="240" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Inheritance</h2>
+            <p>Inheritance allows us to define a class that inherits all the methods and properties from another class, promoting code reuse.</p>
+            <iframe src="https://trinket.io/embed/python/23500af0b50c" width="100%" height="260" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Encapsulation</h2>
+            <p>Encapsulation is the bundling of data and methods that operate on that data within a single unit (class). It also involves restricting direct access to some of an object's components using private attributes (prefixed with double underscores <code>__</code>).</p>
+            <iframe src="https://trinket.io/embed/python/c411c9a12106" width="100%" height="280" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Polymorphism</h2>
+            <p>Polymorphism means "many forms." In Python, it allows different classes to have methods with the same name. We can call the same method on different objects without knowing their exact class type.</p>
+            <iframe src="https://trinket.io/embed/python/7eca4a5f6aad" width="100%" height="330" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Abstraction</h2>
+            <p>Abstraction hides complex implementation details and only shows the essential features of an object. In Python, we use the <code>abc</code> (Abstract Base Classes) module to define abstract classes and methods.</p>
+            <p><i>(Trinket doesn't support abc module so you can try this code in local)</i></p>
+<pre><div class="code-box"><span class="pink">from</span> <span class="aqua">abc</span> <span class="pink">import</span> <span class="aqua">ABC</span>, <span class="aqua">abstractmethod</span>
+
+<span class="pink">class</span> <span class="green">Shape</span><span class="yellow">(</span><span class="green">ABC</span><span class="yellow">)</span>:
+    <span class="pink">@abstractmethod</span>
+    <span class="pink">def</span> <span class="bisque">area</span><span class="yellow">(</span><span class="blue">self</span><span class="yellow">)</span>:
+        <span class="pink">pass</span>
+
+<span class="pink">class</span> <span class="green">Circle</span><span class="yellow">(</span><span class="green">Shape</span><span class="yellow">)</span>:
+    <span class="pink">def</span> <span class="bisque">__init__</span><span class="yellow">(</span><span class="blue">self</span>, <span class="aqua">radius</span><span class="yellow">)</span>:
+        <span class="blue">self</span>.<span class="aqua">radius</span> = <span class="aqua">radius</span>
+
+    <span class="pink">def</span> <span class="bisque">area</span><span class="yellow">(</span><span class="blue">self</span><span class="yellow">)</span>:
+        <span class="pink">return</span> <span class="beige">3.14</span> * <span class="blue">self</span>.<span class="aqua">radius</span> * <span class="blue">self</span>.<span class="aqua">radius</span>
+
+<span class="aqua">c</span> = <span class="green">Circle</span><span class="yellow">(</span><span class="beige">5</span><span class="yellow">)</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Area:"</span>, <span class="aqua">c</span>.<span class="bisque">area</span><span class="yellow">())</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Core Principles of OOP Summary</h2>
+            <div class="grid">
+                <div class="feature-box">
+                    <h3>Encapsulation</h3>
+                    <p>Hiding private data from the outside world using private attributes (e.g., <code>__name</code>).</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Inheritance</h3>
+                    <p>Reusing code by inheriting characteristics from a parent class.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Polymorphism</h3>
+                    <p>Using a single function or method in different ways for different data types.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Abstraction</h3>
+                    <p>Hiding complex implementation details and showing only the essential features.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

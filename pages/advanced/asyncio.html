@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Async IO</h1>
+        <p>Write concurrent code using the async/await syntax.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is Asyncio?</h2>
+            <p><code>asyncio</code> is a library to write concurrent code using the <strong>async/await</strong> syntax. It is a perfect fit for IO-bound and high-level structured network code (like building high-performance web servers or making multiple API requests).</p>
+        </section>
+
+        <section class="card">
+            <h2>Coroutines with async and await</h2>
+            <p>A coroutine is a specialized version of a Python generator function. You define it using <code>async def</code> and pause its execution using <code>await</code>.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">asyncio</span>
+
+<span class="pink">async def</span> <span class="bisque">fetch_data</span><span class="yellow">()</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Fetching data..."</span><span class="yellow">)</span>
+    <span class="pink">await</span> <span class="aqua">asyncio</span>.<span class="bisque">sleep</span><span class="yellow">(</span><span class="beige">2</span><span class="yellow">)</span>  <span class="brown"># Non-blocking delay</span>
+    <span class="pink">return</span> <span class="brown">"Data loaded"</span>
+
+<span class="pink">async def</span> <span class="bisque">main</span><span class="yellow">()</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Start"</span><span class="yellow">)</span>
+    <span class="aqua">result</span> = <span class="pink">await</span> <span class="bisque">fetch_data</span><span class="yellow">()</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="aqua">result</span><span class="yellow">)</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"End"</span><span class="yellow">)</span>
+
+<span class="brown"># You must use asyncio.run() to execute the top-level coroutine</span>
+<span class="aqua">asyncio</span>.<span class="bisque">run</span><span class="yellow">(</span><span class="bisque">main</span><span class="yellow">())</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Running Tasks Concurrently</h2>
+            <p>You can run multiple coroutines at the exact same time using <code>asyncio.gather()</code>.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">asyncio</span>
+
+<span class="pink">async def</span> <span class="bisque">download_file</span><span class="yellow">(</span><span class="aqua">name</span>, <span class="aqua">delay</span><span class="yellow">)</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Starting {name}..."</span><span class="yellow">)</span>
+    <span class="pink">await</span> <span class="aqua">asyncio</span>.<span class="bisque">sleep</span><span class="yellow">(</span><span class="aqua">delay</span><span class="yellow">)</span>
+    <span class="pink">return</span> <span class="brown">f"{name} finished"</span>
+
+<span class="pink">async def</span> <span class="bisque">main</span><span class="yellow">()</span>:
+    <span class="brown"># These will run concurrently, taking only 3 seconds total!</span>
+    <span class="aqua">results</span> = <span class="pink">await</span> <span class="aqua">asyncio</span>.<span class="bisque">gather</span><span class="yellow">(</span>
+        <span class="bisque">download_file</span><span class="yellow">(</span><span class="brown">"File 1"</span>, <span class="beige">2</span><span class="yellow">)</span>,
+        <span class="bisque">download_file</span><span class="yellow">(</span><span class="brown">"File 2"</span>, <span class="beige">3</span><span class="yellow">)</span>,
+        <span class="bisque">download_file</span><span class="yellow">(</span><span class="brown">"File 3"</span>, <span class="beige">1</span><span class="yellow">)</span>
+    <span class="yellow">)</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="aqua">results</span><span class="yellow">)</span>
+
+<span class="aqua">asyncio</span>.<span class="bisque">run</span><span class="yellow">(</span><span class="bisque">main</span><span class="yellow">())</span></div></pre>
+        </section>
+    </main>
+</div>

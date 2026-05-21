@@ -1,0 +1,65 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Python Modules</h1>
+        <p>Learn how to organize, reuse, and import code using Python modules.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is a Module?</h2>
+            <p>A module is a file containing Python definitions and statements. Modules allow you to logically organize your Python code, making it easier to understand and use.</p>
+            <div class="info-box">
+                <strong>Think of it as:</strong> A code library or a file containing a set of functions you want to include in your application.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Importing Built-in Modules</h2>
+            <p>Python comes with a large standard library containing many built-in modules. You can use the <strong>import</strong> keyword to use them.</p>
+            <iframe src="https://trinket.io/embed/python/571c505024c2" width="100%" height="210" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Using "from ... import"</h2>
+            <p>If you only need a specific function or variable from a module, you can import just that specific part without importing the entire file.</p>
+            <iframe src="https://trinket.io/embed/python/53a413f686cf" width="100%" height="210" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Creating Your Own Module</h2>
+            <p>To create a module, simply save your code in a file with the file extension <code>.py</code>. For example, here we have defined a function in <code>my_module.py</code> and imported it in <code>main.py</code></p>
+            <iframe src="https://trinket.io/embed/python/f376eb3ae27d" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Common Built-in Modules</h2>
+            <p>Python's standard library is extensive. Here are a few commonly used built-in modules:</p>
+            <ul>
+                <li><strong>math:</strong> Provides mathematical functions like <code>sqrt()</code>, <code>sin()</code>, and constants like <code>pi</code>.</li>
+                <li><strong>random:</strong> Contains functions to generate pseudo-random numbers and make random selections.</li>
+                <li><strong>datetime:</strong> Supplies classes for manipulating dates and times.</li>
+                <li><strong>os:</strong> Allows you to interface with the underlying operating system (e.g., navigating directories).</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Working with the CSV Module</h2>
+            <p>The <strong>csv</strong> module is incredibly useful for reading from and writing to tabular data files (Comma-Separated Values). It handles the formatting and parsing of rows and columns automatically.</p>
+            <p><i>(Trinket doesn't support csv module so you can try this code in local)</i></p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">csv</span>
+
+<span class="brown"># Writing data to a CSV file</span>
+<span class="pink">with</span> <span class="bisque">open</span><span class="yellow">(</span><span class="brown">'students.csv'</span>, <span class="brown">'w'</span>, <span class="aqua">newline</span>=<span class="brown">''</span><span class="yellow">)</span> <span class="pink">as</span> <span class="aqua">file</span>:
+    <span class="aqua">writer</span> = <span class="aqua">csv</span>.<span class="bisque">writer</span><span class="yellow">(</span><span class="aqua">file</span><span class="yellow">)</span>
+    <span class="aqua">writer</span>.<span class="bisque">writerow</span><span class="yellow">([</span><span class="brown">"Name"</span>, <span class="brown">"Course"</span><span class="yellow">])</span>
+    <span class="aqua">writer</span>.<span class="bisque">writerow</span><span class="yellow">([</span><span class="brown">"Alice"</span>, <span class="brown">"Python Basics"</span><span class="yellow">])</span>
+    <span class="aqua">writer</span>.<span class="bisque">writerow</span><span class="yellow">([</span><span class="brown">"Bob"</span>, <span class="brown">"Data Science"</span><span class="yellow">])</span>
+
+<span class="brown"># Reading data from a CSV file</span>
+<span class="pink">with</span> <span class="bisque">open</span><span class="yellow">(</span><span class="brown">'students.csv'</span>, <span class="brown">'r'</span><span class="yellow">)</span> <span class="pink">as</span> <span class="aqua">file</span>:
+    <span class="aqua">reader</span> = <span class="aqua">csv</span>.<span class="bisque">reader</span><span class="yellow">(</span><span class="aqua">file</span><span class="yellow">)</span>
+    <span class="pink">for</span> <span class="aqua">row</span> <span class="pink">in</span> <span class="aqua">reader</span>:
+        <span class="bisque">print</span><span class="yellow">(</span><span class="aqua">row</span><span class="yellow">)</span></div></pre>
+        </section>
+    </main>
+</div>

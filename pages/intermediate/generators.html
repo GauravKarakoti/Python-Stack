@@ -1,0 +1,34 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Generators</h1>
+        <p>Optimize memory efficiency by generating values on the fly.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is a Generator?</h2>
+            <p>A generator is a special type of function that returns an iterator object. Instead of returning a single value and destroying its local variables, a generator pauses its execution and saves its state so it can be resumed right where it left off.</p>
+            <div class="info-box">
+                <strong>Why use them?</strong> They are highly memory-efficient. Instead of storing an entire list of numbers in memory, generators compute values one at a time as needed.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>The 'yield' Statement</h2>
+            <p>Unlike regular functions that use the <strong>return</strong> statement, generators use the <strong>yield</strong> keyword to output data.</p>
+            <iframe src="https://trinket.io/embed/python/135125ef6bf4" width="100%" height="250" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Generators with Loops</h2>
+            <p>Generators are typically used inside loops to yield a sequence of values automatically.</p>
+            <iframe src="https://trinket.io/embed/python/afd7348d31f5" width="100%" height="260" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Generator Expressions</h2>
+            <p>Similar to list comprehensions, you can create quick generators using parentheses instead of square brackets.</p>
+            <iframe src="https://trinket.io/embed/python/ad5d2a755d0c" width="100%" height="240" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+    </main>
+</div>

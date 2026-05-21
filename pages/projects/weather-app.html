@@ -1,0 +1,57 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Project: Weather App</h1>
+        <p>Build a script that fetches live weather data for any city.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Project Overview</h2>
+            <p>In this project, you will use the <code>requests</code> library to make a call to the OpenWeatherMap API, parse the JSON data, and display the current temperature and conditions to the user.</p>
+            <div class="info-box">
+                <strong>Prerequisites:</strong> You will need to sign up for a free API key at <em>openweathermap.org</em>.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>The Code</h2>
+            <p>Copy this script, replace the dummy API key with your real one, and run it in your terminal.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">requests</span>
+
+<span class="pink">def</span> <span class="bisque">get_weather</span><span class="yellow">(</span><span class="aqua">city_name</span><span class="yellow">)</span>:
+    <span class="aqua">api_key</span> = <span class="brown">"YOUR_FREE_API_KEY_HERE"</span>
+    <span class="aqua">base_url</span> = <span class="brown">"http://api.openweathermap.org/data/2.5/weather?"</span>
+    
+    <span class="brown"># Construct the final API URL</span>
+    <span class="aqua">complete_url</span> = <span class="aqua">base_url</span> + <span class="brown">"q="</span> + <span class="aqua">city_name</span> + <span class="brown">"&appid="</span> + <span class="aqua">api_key</span> + <span class="brown">"&units=metric"</span>
+    
+    <span class="brown"># Make the GET request</span>
+    <span class="aqua">response</span> = <span class="aqua">requests</span>.<span class="bisque">get</span><span class="yellow">(</span><span class="aqua">complete_url</span><span class="yellow">)</span>
+    <span class="aqua">data</span> = <span class="aqua">response</span>.<span class="bisque">json</span><span class="yellow">()</span>
+    
+    <span class="brown"># Check if city is found</span>
+    <span class="pink">if</span> <span class="aqua">data</span><span class="yellow">[</span><span class="brown">"cod"</span><span class="yellow">]</span> != <span class="brown">"404"</span>:
+        <span class="aqua">main_data</span> = <span class="aqua">data</span><span class="yellow">[</span><span class="brown">"main"</span><span class="yellow">]</span>
+        <span class="aqua">weather_desc</span> = <span class="aqua">data</span><span class="yellow">[</span><span class="brown">"weather"</span><span class="yellow">][</span><span class="beige">0</span><span class="yellow">][</span><span class="brown">"description"</span><span class="yellow">]</span>
+        
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"\nWeather in {city_name}:"</span><span class="yellow">)</span>
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Temperature: {main_data['temp']}°C"</span><span class="yellow">)</span>
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Humidity: {main_data['humidity']}%"</span><span class="yellow">)</span>
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Description: {weather_desc.capitalize()}"</span><span class="yellow">)</span>
+    <span class="pink">else</span>:
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"City Not Found!"</span><span class="yellow">)</span>
+
+<span class="brown"># Get user input</span>
+<span class="aqua">user_city</span> = <span class="bisque">input</span><span class="yellow">(</span><span class="brown">"Enter city name: "</span><span class="yellow">)</span>
+<span class="bisque">get_weather</span><span class="yellow">(</span><span class="aqua">user_city</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Challenge Yourself</h2>
+            <ul>
+                <li>Modify the script to accept user input continuously inside a <code>while True</code> loop until the user types "exit".</li>
+                <li>Use the <code>try/except</code> block to gracefully handle scenarios where the computer has no internet connection.</li>
+            </ul>
+        </section>
+    </main>
+</div>

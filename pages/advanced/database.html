@@ -1,0 +1,53 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Database Interaction</h1>
+        <p>Learn how to connect Python to a database using SQLite.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>SQLite in Python</h2>
+            <p>Python comes with a built-in module called <code>sqlite3</code>, which allows you to create and interact with SQL databases without needing to install external database servers.</p>
+            <div class="info-box">
+                <strong>Concept:</strong> You need a <strong>Connection</strong> object to connect to the database and a <strong>Cursor</strong> object to execute SQL commands.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Creating a Table & Inserting Data</h2>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">sqlite3</span>
+
+<span class="brown"># Connect to a file-based database (it creates one if it doesn't exist)</span>
+<span class="aqua">conn</span> = <span class="aqua">sqlite3</span>.<span class="bisque">connect</span><span class="yellow">(</span><span class="brown">"users.db"</span><span class="yellow">)</span>
+<span class="aqua">cursor</span> = <span class="aqua">conn</span>.<span class="bisque">cursor</span><span class="yellow">()</span>
+
+<span class="brown"># Execute a SQL Query to create a table</span>
+<span class="aqua">cursor</span>.<span class="bisque">execute</span><span class="yellow">(</span><span class="brown">"CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)"</span><span class="yellow">)</span>
+
+<span class="brown"># Insert data</span>
+<span class="aqua">cursor</span>.<span class="bisque">execute</span><span class="yellow">(</span><span class="brown">"INSERT INTO students (name, age) VALUES ('Alex', 22)"</span><span class="yellow">)</span>
+
+<span class="brown"># Save (commit) the changes and close the connection</span>
+<span class="aqua">conn</span>.<span class="bisque">commit</span><span class="yellow">()</span>
+<span class="aqua">conn</span>.<span class="bisque">close</span><span class="yellow">()</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Fetching Data</h2>
+            <p>Use the <code>fetchall()</code> method to retrieve data from the database.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">sqlite3</span>
+
+<span class="aqua">conn</span> = <span class="aqua">sqlite3</span>.<span class="bisque">connect</span><span class="yellow">(</span><span class="brown">"users.db"</span><span class="yellow">)</span>
+<span class="aqua">cursor</span> = <span class="aqua">conn</span>.<span class="bisque">cursor</span><span class="yellow">()</span>
+
+<span class="brown"># Select all students</span>
+<span class="aqua">cursor</span>.<span class="bisque">execute</span><span class="yellow">(</span><span class="brown">"SELECT * FROM students"</span><span class="yellow">)</span>
+<span class="aqua">rows</span> = <span class="aqua">cursor</span>.<span class="bisque">fetchall</span><span class="yellow">()</span>
+
+<span class="pink">for</span> <span class="aqua">row</span> <span class="pink">in</span> <span class="aqua">rows</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="aqua">row</span><span class="yellow">)</span>
+
+<span class="aqua">conn</span>.<span class="bisque">close</span><span class="yellow">()</span></div></pre>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,79 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Django Web Framework</h1>
+        <p>The web framework for perfectionists with deadlines.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is Django?</h2>
+            <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Unlike Flask, which is a microframework, Django comes with "batteries included" (built-in ORM, admin panel, authentication, etc.).</p>
+        </section>
+
+        <section class="card">
+            <h2>The MTV Architecture</h2>
+            <p>Django follows the Model-Template-View architectural pattern.</p>
+            <ul>
+                <li><strong>Model:</strong> Handles the database structure and queries.</li>
+                <li><strong>Template:</strong> The frontend HTML, controlled by Django's template language.</li>
+                <li><strong>View:</strong> The logic that fetches models and renders templates.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Starting a Project</h2>
+            <p>Run these commands in your terminal to create and start a Django project.</p>
+<pre><div class="code-box"><span class="brown"># 1. Install Django</span>
+<span class="aqua">pip install django</span>
+
+<span class="brown"># 2. Create a new project</span>
+<span class="aqua">django-admin startproject myproject</span>
+
+<span class="brown"># 3. Move into the directory</span>
+<span class="aqua">cd myproject</span>
+
+<span class="brown"># 4. Run the development server</span>
+<span class="aqua">python manage.py runserver</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Creating an App</h2>
+            <p>A Django project is made up of multiple apps. Create an app using this command:</p>
+<pre><div class="code-box"><span class="brown"># Create a new app called 'blog'</span>
+<span class="aqua">python manage.py startapp blog</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Defining a Model</h2>
+            <p>Models define your database schema. Here is an example of an Article model in <code>models.py</code>:</p>
+<pre><div class="code-box"><span class="pink">from</span> <span class="aqua">django.db</span> <span class="pink">import</span> <span class="aqua">models</span>
+
+<span class="pink">class</span> <span class="green">Article</span><span class="yellow">(</span><span class="aqua">models</span>.<span class="green">Model</span><span class="yellow">)</span>:
+    <span class="aqua">title</span> = <span class="aqua">models</span>.<span class="green">CharField</span><span class="yellow">(</span><span class="aqua">max_length</span>=<span class="beige">100</span><span class="yellow">)</span>
+    <span class="aqua">content</span> = <span class="aqua">models</span>.<span class="green">TextField</span><span class="yellow">()</span>
+
+    <span class="pink">def</span> <span class="bisque">__str__</span><span class="yellow">(</span><span class="blue">self</span><span class="yellow">)</span>:
+        <span class="pink">return</span> <span class="blue">self</span>.<span class="aqua">title</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Creating a View</h2>
+            <p>Views handle the logic and return HTTP responses. Here is a simple function-based view in <code>views.py</code>:</p>
+<pre><div class="code-box"><span class="pink">from</span> <span class="aqua">django.http</span> <span class="pink">import</span> <span class="green">HttpResponse</span>
+
+<span class="pink">def</span> <span class="bisque">home_view</span><span class="yellow">(</span><span class="aqua">request</span><span class="yellow">)</span>:
+    <span class="pink">return</span> <span class="green">HttpResponse</span><span class="yellow">(</span><span class="brown">"Hello, Django!"</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Configuring URLs</h2>
+            <p>Map your views to URLs in <code>urls.py</code> so users can access them in their browser.</p>
+<pre><div class="code-box"><span class="pink">from</span> <span class="aqua">django.urls</span> <span class="pink">import</span> <span class="aqua">path</span>
+<span class="pink">from</span> <span class="aqua">.</span> <span class="pink">import</span> <span class="aqua">views</span>
+
+<span class="aqua">urlpatterns</span> = <span class="yellow">[</span>
+    <span class="bisque">path</span><span class="yellow">(</span><span class="brown">''</span>, <span class="aqua">views</span>.<span class="bisque">home_view</span>, <span class="aqua">name</span>=<span class="brown">'home'</span><span class="yellow">)</span>,
+<span class="yellow">]</span></div></pre>
+        </section>
+    </main>
+</div>

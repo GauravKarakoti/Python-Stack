@@ -1,0 +1,47 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Flask Web Framework</h1>
+        <p>Build lightweight and powerful web applications and APIs with Flask.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is Flask?</h2>
+            <p>Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries, leaving the developer in full control.</p>
+            <div class="info-box">
+                <strong>Prerequisite:</strong> Install it via terminal using <code>pip install Flask</code>.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Your First Flask App</h2>
+            <p>Creating a web server with Flask takes only a few lines of code.</p>
+<pre><div class="code-box"><span class="pink">from</span> <span class="aqua">flask</span> <span class="pink">import</span> <span class="green">Flask</span>
+
+<span class="aqua">app</span> = <span class="green">Flask</span><span class="yellow">(</span><span class="aqua">__name__</span><span class="yellow">)</span>
+
+<span class="pink">@app.route</span><span class="yellow">(</span><span class="brown">"/"</span><span class="yellow">)</span>
+<span class="pink">def</span> <span class="bisque">home</span><span class="yellow">()</span>:
+    <span class="pink">return</span> <span class="brown">"&lt;h1&gt;Hello, Welcome to Flask!&lt;/h1&gt;"</span>
+
+<span class="pink">if</span> <span class="aqua">__name__</span> == <span class="brown">"__main__"</span>:
+    <span class="aqua">app</span>.<span class="bisque">run</span><span class="yellow">(</span><span class="aqua">debug</span>=<span class="blue">True</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Dynamic Routing</h2>
+            <p>You can make your URLs dynamic by adding variable parts to the route.</p>
+<pre><div class="code-box"><span class="pink">from</span> <span class="aqua">flask</span> <span class="pink">import</span> <span class="green">Flask</span>
+
+<span class="aqua">app</span> = <span class="green">Flask</span><span class="yellow">(</span><span class="aqua">__name__</span><span class="yellow">)</span>
+
+<span class="brown"># Pass a username through the URL</span>
+<span class="pink">@app.route</span><span class="yellow">(</span><span class="brown">"/user/&lt;name&gt;"</span><span class="yellow">)</span>
+<span class="pink">def</span> <span class="bisque">greet_user</span><span class="yellow">(</span><span class="aqua">name</span><span class="yellow">)</span>:
+    <span class="pink">return</span> <span class="brown">f"Hello, {name}! Welcome to your dashboard."</span>
+
+<span class="pink">if</span> <span class="aqua">__name__</span> == <span class="brown">"__main__"</span>:
+    <span class="aqua">app</span>.<span class="bisque">run</span><span class="yellow">()</span></div></pre>
+        </section>
+    </main>
+</div>

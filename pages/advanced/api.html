@@ -1,0 +1,70 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Working with APIs</h1>
+        <p>Learn how to make HTTP requests and fetch live data from the web.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is an API?</h2>
+            <p>API stands for Application Programming Interface. It allows two applications to talk to each other. In Python, we commonly interact with web APIs to fetch JSON data.</p>
+            <div class="info-box">
+                <strong>Prerequisite:</strong> You need to install the <code>requests</code> module using <code>pip install requests</code>.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Making a GET Request</h2>
+            <p>Use the <code>requests.get()</code> function to fetch data from an API endpoint.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">requests</span>
+
+<span class="aqua">url</span> = <span class="brown">"https://api.github.com/users/gauravkarakoti"</span>
+<span class="aqua">response</span> = <span class="aqua">requests</span>.<span class="bisque">get</span><span class="yellow">(</span><span class="aqua">url</span><span class="yellow">)</span>
+
+<span class="pink">if</span> <span class="aqua">response</span>.<span class="bisque">status_code</span> == <span class="beige">200</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Success!"</span><span class="yellow">)</span>
+<span class="pink">else</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Failed to retrieve data"</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Parsing JSON Data</h2>
+            <p>APIs typically return data in JSON format. The requests library has a built-in <code>.json()</code> decoder.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">requests</span>
+
+<span class="aqua">response</span> = <span class="aqua">requests</span>.<span class="bisque">get</span><span class="yellow">(</span><span class="brown">"https://api.github.com/users/gauravkarakoti"</span><span class="yellow">)</span>
+<span class="aqua">data</span> = <span class="aqua">response</span>.<span class="bisque">json</span><span class="yellow">()</span>
+
+<span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Name:"</span>, <span class="aqua">data</span><span class="yellow">[</span><span class="brown">'name'</span><span class="yellow">])</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Followers:"</span>, <span class="aqua">data</span><span class="yellow">[</span><span class="brown">'followers'</span><span class="yellow">])</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Common HTTP Methods</h2>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>Retrieve data from a server</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>Send new data to a server (e.g., submitting a form)</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>Update existing data on the server</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>Remove data from the server</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>

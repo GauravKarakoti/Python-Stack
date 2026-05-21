@@ -1,0 +1,37 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>File Handling</h1>
+        <p>Learn how to read, write, and append data to files using Python.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Opening a File</h2>
+            <p>Python has a built-in <code>open()</code> function to open a file. It takes two primary parameters: the file name and the mode.</p>
+            <div class="info-box">
+                <strong>Modes:</strong> "r" (Read), "w" (Write), "a" (Append), "x" (Create)
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Reading a File</h2>
+            <p>You can read the entire content of a file using the <code>read()</code> method.</p>
+            <iframe src="https://trinket.io/embed/python/b556855727c9" width="100%" height="230" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Writing to a File using 'with'</h2>
+            <p>It is good practice to use the <strong>with</strong> statement when working with files. It automatically closes the file for you.</p>
+            <iframe src="https://trinket.io/embed/python/d194b814efbf" width="100%" height="230" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+        
+        <section class="card">
+            <h2>Important Notes</h2>
+            <ul>
+                <li>Always close your files to free up memory (or use the <code>with</code> block).</li>
+                <li>Writing (<code>"w"</code>) to an existing file will completely overwrite its contents.</li>
+                <li>Use Append (<code>"a"</code>) if you want to add content to the end of a file without deleting the old text.</li>
+            </ul>
+        </section>
+    </main>
+</div>

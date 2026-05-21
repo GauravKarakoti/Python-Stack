@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Multiprocessing in Python</h1>
+        <p>Bypass the Global Interpreter Lock (GIL) for true parallel computing.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is Multiprocessing?</h2>
+            <p>Unlike multithreading, multiprocessing creates separate memory spaces and completely independent Python processes. This is the recommended approach for CPU-heavy tasks, as it fully utilizes multiple processor cores.</p>
+        </section>
+
+        <section class="card">
+            <h2>Creating a Process</h2>
+            <p>You can use the <code>Process</code> class from the <code>multiprocessing</code> module to spin up a new process.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">multiprocessing</span>
+<span class="pink">import</span> <span class="aqua">time</span>
+
+<span class="pink">def</span> <span class="bisque">cpu_heavy_task</span><span class="yellow">(</span><span class="aqua">name</span><span class="yellow">)</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Task {name} starting..."</span><span class="yellow">)</span>
+    <span class="brown"># Simulate heavy computation</span>
+    <span class="aqua">result</span> = <span class="yellow">[</span><span class="aqua">i</span> * <span class="aqua">i</span> <span class="pink">for</span> <span class="aqua">i</span> <span class="pink">in</span> <span class="bisque">range</span><span class="yellow">(</span><span class="beige">10000000</span><span class="yellow">)]</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Task {name} finished!"</span><span class="yellow">)</span>
+
+<span class="pink">if</span> <span class="aqua">__name__</span> == <span class="brown">'__main__'</span>:
+    <span class="aqua">p1</span> = <span class="aqua">multiprocessing</span>.<span class="green">Process</span><span class="yellow">(</span><span class="aqua">target</span>=<span class="bisque">cpu_heavy_task</span>, <span class="aqua">args</span>=<span class="yellow">(</span><span class="brown">"A"</span>,<span class="yellow">))</span>
+    <span class="aqua">p2</span> = <span class="aqua">multiprocessing</span>.<span class="green">Process</span><span class="yellow">(</span><span class="aqua">target</span>=<span class="bisque">cpu_heavy_task</span>, <span class="aqua">args</span>=<span class="yellow">(</span><span class="brown">"B"</span>,<span class="yellow">))</span>
+
+    <span class="aqua">p1</span>.<span class="bisque">start</span><span class="yellow">()</span>
+    <span class="aqua">p2</span>.<span class="bisque">start</span><span class="yellow">()</span>
+
+    <span class="aqua">p1</span>.<span class="bisque">join</span><span class="yellow">()</span>
+    <span class="aqua">p2</span>.<span class="bisque">join</span><span class="yellow">()</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"All processes complete."</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Using a Process Pool</h2>
+            <p>If you have many tasks, the <code>Pool</code> object makes it easy to divide the workload across multiple CPU cores automatically.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">multiprocessing</span>
+
+<span class="pink">def</span> <span class="bisque">square</span><span class="yellow">(</span><span class="aqua">n</span><span class="yellow">)</span>:
+    <span class="pink">return</span> <span class="aqua">n</span> * <span class="aqua">n</span>
+
+<span class="pink">if</span> <span class="aqua">__name__</span> == <span class="brown">'__main__'</span>:
+    <span class="aqua">numbers</span> = <span class="yellow">[</span><span class="beige">1</span>, <span class="beige">2</span>, <span class="beige">3</span>, <span class="beige">4</span>, <span class="beige">5</span><span class="yellow">]</span>
+    
+    <span class="brown"># Creates a pool of workers matching your CPU core count</span>
+    <span class="pink">with</span> <span class="aqua">multiprocessing</span>.<span class="green">Pool</span><span class="yellow">()</span> <span class="pink">as</span> <span class="aqua">pool</span>:
+        <span class="aqua">results</span> = <span class="aqua">pool</span>.<span class="bisque">map</span><span class="yellow">(</span><span class="bisque">square</span>, <span class="aqua">numbers</span><span class="yellow">)</span>
+        
+    <span class="bisque">print</span><span class="yellow">(</span><span class="aqua">results</span><span class="yellow">)</span></div></pre>
+        </section>
+    </main>
+</div>

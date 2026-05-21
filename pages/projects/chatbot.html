@@ -1,0 +1,62 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Project: AI ChatBot</h1>
+        <p>Build an interactive AI assistant using the Groq API and Llama 3.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Project Overview</h2>
+            <p>In this project, we'll build a fast, terminal-based chatbot utilizing the <code>groq</code> SDK to interface with highly optimized open-source LLMs.</p>
+            <div class="info-box">
+                <strong>Prerequisites:</strong> Run <code>pip install groq</code> and set your <code>GROQ_API_KEY</code> environment variable.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>The Code</h2>
+            <p>This script initializes the Groq client and maintains an interactive loop for continuous conversation.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">os</span>
+<span class="pink">from</span> <span class="aqua">groq</span> <span class="pink">import</span> <span class="green">Groq</span>
+
+<span class="brown"># Initialize the client using the environment variable</span>
+<span class="aqua">client</span> = <span class="green">Groq</span><span class="yellow">(</span><span class="aqua">api_key</span>=<span class="aqua">os</span>.<span class="aqua">environ</span>.<span class="bisque">get</span><span class="yellow">(</span><span class="brown">"GROQ_API_KEY"</span><span class="yellow">))</span>
+<span class="brown"># Uncomment the next line if you don't wanna set up environment variables and use the API key directly
+# client = Groq(api_key="GROQ_API_KEY")    # Replace GROQ_API_KEY with your API key
+</span>
+
+<span class="pink">def</span> <span class="bisque">chat_with_bot</span><span class="yellow">(</span><span class="aqua">user_input</span><span class="yellow">)</span>:
+    <span class="brown"># Create the completion request</span>
+    <span class="aqua">chat_completion</span> = <span class="aqua">client</span>.<span class="aqua">chat</span>.<span class="aqua">completions</span>.<span class="bisque">create</span><span class="yellow">(</span>
+        <span class="aqua">messages</span>=<span class="yellow">[</span>
+            <span class="yellow">{</span>
+                <span class="brown">"role"</span>: <span class="brown">"user"</span>,
+                <span class="brown">"content"</span>: <span class="aqua">user_input</span>,
+            <span class="yellow">}</span>
+        <span class="yellow">]</span>,
+        <span class="brown"># Using the Llama 3 8B model via Groq</span>
+        <span class="aqua">model</span>=<span class="brown">"llama3-8b-8192"</span>,
+    <span class="yellow">)</span>
+    <span class="pink">return</span> <span class="aqua">chat_completion</span>.<span class="aqua">choices</span><span class="yellow">[</span><span class="beige">0</span><span class="yellow">]</span>.<span class="aqua">message</span>.<span class="aqua">content</span>
+
+<span class="brown"># Interactive CLI Loop</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Bot: Hello! Type 'exit' to quit."</span><span class="yellow">)</span>
+<span class="pink">while</span> <span class="blue">True</span>:
+    <span class="aqua">prompt</span> = <span class="bisque">input</span><span class="yellow">(</span><span class="brown">"You: "</span><span class="yellow">)</span>
+    <span class="pink">if</span> <span class="aqua">prompt</span>.<span class="bisque">lower</span><span class="yellow">()</span> == <span class="brown">'exit'</span>:
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Bot: Goodbye!"</span><span class="yellow">)</span>
+        <span class="pink">break</span>
+    
+    <span class="aqua">response</span> = <span class="bisque">chat_with_bot</span><span class="yellow">(</span><span class="aqua">prompt</span><span class="yellow">)</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"\nBot:"</span>, <span class="aqua">response</span>, <span class="brown">"\n"</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Challenge Yourself</h2>
+            <ul>
+                <li>Modify the <code>messages</code> array to keep track of conversational history (append both user and assistant messages) so the bot has memory context.</li>
+                <li>Add a "system" role message to the top of the array to alter the bot's persona (e.g., make it talk like a pirate or act as a coding tutor).</li>
+            </ul>
+        </section>
+    </main>
+</div>

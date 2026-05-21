@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Multithreading in Python</h1>
+        <p>Learn how to run multiple tasks concurrently to speed up your programs.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is Multithreading?</h2>
+            <p>A thread is the smallest unit of execution within an operating system. Multithreading allows a single program to run multiple threads simultaneously, which is highly useful for tasks that involve waiting (like downloading files or reading from a database).</p>
+            <div class="info-box">
+                <strong>Important:</strong> Due to Python's Global Interpreter Lock (GIL), multithreading is best for I/O-bound tasks, not CPU-bound tasks.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Creating a Thread</h2>
+            <p>Python provides the built-in <code>threading</code> module to create and manage threads easily.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">threading</span>
+<span class="pink">import</span> <span class="aqua">time</span>
+
+<span class="pink">def</span> <span class="bisque">print_numbers</span><span class="yellow">()</span>:
+    <span class="pink">for</span> <span class="aqua">i</span> <span class="pink">in</span> <span class="bisque">range</span><span class="yellow">(</span><span class="beige">5</span><span class="yellow">)</span>:
+        <span class="aqua">time</span>.<span class="bisque">sleep</span><span class="yellow">(</span><span class="beige">1</span><span class="yellow">)</span>
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Number:"</span>, <span class="aqua">i</span><span class="yellow">)</span>
+
+<span class="brown"># Create a thread</span>
+<span class="aqua">t1</span> = <span class="aqua">threading</span>.<span class="green">Thread</span><span class="yellow">(</span><span class="aqua">target</span>=<span class="bisque">print_numbers</span><span class="yellow">)</span>
+
+<span class="brown"># Start the thread</span>
+<span class="aqua">t1</span>.<span class="bisque">start</span><span class="yellow">()</span>
+
+<span class="bisque">print</span><span class="yellow">(</span><span class="brown">"This prints immediately while the thread is running in the background!"</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Joining Threads</h2>
+            <p>If you want the main program to wait until a thread finishes its execution, you use the <code>.join()</code> method.</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">threading</span>
+<span class="pink">import</span> <span class="aqua">time</span>
+
+<span class="pink">def</span> <span class="bisque">worker</span><span class="yellow">()</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Worker started"</span><span class="yellow">)</span>
+    <span class="aqua">time</span>.<span class="bisque">sleep</span><span class="yellow">(</span><span class="beige">2</span><span class="yellow">)</span>
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Worker finished"</span><span class="yellow">)</span>
+
+<span class="aqua">t</span> = <span class="aqua">threading</span>.<span class="green">Thread</span><span class="yellow">(</span><span class="aqua">target</span>=<span class="bisque">worker</span><span class="yellow">)</span>
+<span class="aqua">t</span>.<span class="bisque">start</span><span class="yellow">()</span>
+
+<span class="brown"># Wait for the thread to complete before moving on</span>
+<span class="aqua">t</span>.<span class="bisque">join</span><span class="yellow">()</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Main program finished."</span><span class="yellow">)</span></div></pre>
+        </section>
+    </main>
+</div>

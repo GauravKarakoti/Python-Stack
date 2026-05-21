@@ -1,0 +1,50 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Python Decorators</h1>
+        <p>Modify the behavior of functions dynamically using decorators.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>What is a Decorator?</h2>
+            <p>A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure. Decorators are usually called before the definition of a function you want to decorate.</p>
+            <div class="info-box">
+                <strong>Concept:</strong> In Python, functions are first-class objects. This means they can be passed as arguments to other functions, returned from other functions, and assigned to variables.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Creating a Simple Decorator</h2>
+            <p>A decorator is basically a function that takes another function as an argument, adds some functionality, and returns another function.</p>
+<pre><div class="code-box"><span class="pink">def</span> <span class="bisque">my_decorator</span><span class="yellow">(</span><span class="aqua">func</span><span class="yellow">)</span>:
+    <span class="pink">def</span> <span class="bisque">wrapper</span><span class="yellow">()</span>:
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"1. Before the function is called."</span><span class="yellow">)</span>
+        <span class="bisque">func</span><span class="yellow">()</span>
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"3. After the function is called."</span><span class="yellow">)</span>
+    <span class="pink">return</span> <span class="aqua">wrapper</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Using the @ Syntax</h2>
+            <p>Python provides an easier way to apply decorators using the <strong>@</strong> symbol, which is placed right above the function definition.</p>
+            <iframe src="https://trinket.io/embed/python/bc9056afc205" width="100%" height="320" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Decorating Functions with Arguments</h2>
+            <p>If your original function takes arguments, the wrapper function inside your decorator must also accept them. We use <code>*args</code> and <code>**kwargs</code> to make the decorator flexible.</p>
+            <p><i>(Trinket was having trouble doing this so you can try this code in local)</i></p>
+<pre><div class="code-box"><span class="pink">def</span> <span class="bisque">logger</span><span class="yellow">(</span><span class="aqua">func</span><span class="yellow">)</span>:
+    <span class="pink">def</span> <span class="bisque">wrapper</span><span class="yellow">(</span>*<span class="aqua">args</span>, **<span class="aqua">kwargs</span><span class="yellow">)</span>:
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"Running '{func.__name__}' with arguments {args}"</span><span class="yellow">)</span>
+        <span class="pink">return</span> <span class="bisque">func</span><span class="yellow">(</span>*<span class="aqua">args</span>, **<span class="aqua">kwargs</span><span class="yellow">)</span>
+    <span class="pink">return</span> <span class="aqua">wrapper</span>
+
+<span class="pink">@logger</span>
+<span class="pink">def</span> <span class="bisque">add</span><span class="yellow">(</span><span class="aqua">a</span>, <span class="aqua">b</span><span class="yellow">)</span>:
+    <span class="pink">return</span> <span class="aqua">a</span> + <span class="aqua">b</span>
+
+<span class="bisque">print</span><span class="yellow">(</span><span class="bisque">add</span><span class="yellow">(</span><span class="beige">5</span>, <span class="beige">7</span><span class="yellow">))</span></div></pre>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,49 @@
+<div class="page-wrapper">
+    <header class="hero">
+        <h1>Project: Web Scraper</h1>
+        <p>Extract data from websites automatically using Python.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Project Overview</h2>
+            <p>Web scraping is the process of extracting data from websites. We will use the <code>requests</code> library to fetch the HTML, and <code>BeautifulSoup</code> to parse it and find the information we need.</p>
+            <div class="info-box">
+                <strong>Prerequisites:</strong> Run <code>pip install requests beautifulsoup4</code> in your terminal.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>The Code</h2>
+            <p>This script fetches the HTML from a demo website and extracts all the headlines (h2 tags).</p>
+<pre><div class="code-box"><span class="pink">import</span> <span class="aqua">requests</span>
+<span class="pink">from</span> <span class="aqua">bs4</span> <span class="pink">import</span> <span class="green">BeautifulSoup</span>
+
+<span class="aqua">url</span> = <span class="brown">"https://news.ycombinator.com/"</span>
+
+<span class="brown"># 1. Fetch the webpage</span>
+<span class="aqua">response</span> = <span class="aqua">requests</span>.<span class="bisque">get</span><span class="yellow">(</span><span class="aqua">url</span><span class="yellow">)</span>
+
+<span class="pink">if</span> <span class="aqua">response</span>.<span class="bisque">status_code</span> == <span class="beige">200</span>:
+    <span class="brown"># 2. Parse the HTML</span>
+    <span class="aqua">soup</span> = <span class="green">BeautifulSoup</span><span class="yellow">(</span><span class="aqua">response</span>.<span class="aqua">text</span>, <span class="brown">"html.parser"</span><span class="yellow">)</span>
+    
+    <span class="brown"># 3. Find specific elements (e.g., all span tags with the class 'titleline')</span>
+    <span class="aqua">headlines</span> = <span class="aqua">soup</span>.<span class="bisque">find_all</span><span class="yellow">(</span><span class="brown">"span"</span>, <span class="aqua">class_</span>=<span class="brown">"titleline"</span><span class="yellow">)</span>
+    
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"--- Hacker News Top Stories ---"</span><span class="yellow">)</span>
+    <span class="pink">for</span> <span class="aqua">i</span>, <span class="aqua">headline</span> <span class="pink">in</span> <span class="bisque">enumerate</span><span class="yellow">(</span><span class="aqua">headlines</span>[:<span class="beige">10</span>]<span class="yellow">)</span>:
+        <span class="bisque">print</span><span class="yellow">(</span><span class="brown">f"{i+1}. {headline.text}"</span><span class="yellow">)</span>
+<span class="pink">else</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Failed to retrieve the webpage."</span><span class="yellow">)</span></div></pre>
+        </section>
+
+        <section class="card">
+            <h2>Challenge Yourself</h2>
+            <ul>
+                <li>Modify the script to also scrape the link (the <code>href</code> attribute) associated with each headline.</li>
+                <li>Export the scraped data into a <code>.csv</code> file using Python's built-in <code>csv</code> module.</li>
+            </ul>
+        </section>
+    </main>
+</div>
