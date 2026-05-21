@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Loops</title>
+
+    <link rel="stylesheet" href="loops.css" />
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Python Loops</h1>
+        <p>
+            Learn how to repeat tasks efficiently using loops in Python.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Introduction -->
+        <section class="card">
+            <h2>What are Loops?</h2>
+
+            <p>
+                Loops are used to execute a block of code repeatedly until a condition is met.
+            </p>
+
+            <p>
+                Python mainly provides two types of loops:
+                <strong>for loop</strong> and <strong>while loop</strong>.
+            </p>
+
+            <div class="info-box">
+                <strong>Example:</strong>
+                Printing numbers from 1 to 10 using a loop instead of writing
+                print statements multiple times.
+            </div>
+        </section>
+
+        <!-- For Loop -->
+        <section class="card">
+            <h2>Python for Loop</h2>
+
+            <p>
+                A <strong>for loop</strong> is used to iterate through sequences
+                like lists, strings, tuples, or ranges.
+            </p>
+
+            <div class="code-box">
+<pre>
+for i in range(1, 6):
+    print(i)
+</pre>
+            </div>
+
+            <div class="info-box">
+                Output:
+                1 2 3 4 5
+            </div>
+        </section>
+
+        <!-- While Loop -->
+        <section class="card">
+            <h2>Python while Loop</h2>
+
+            <p>
+                A <strong>while loop</strong> executes as long as the condition is true.
+            </p>
+
+            <div class="code-box">
+<pre>
+count = 1
+
+while count <= 5:
+    print(count)
+    count += 1
+</pre>
+            </div>
+        </section>
+
+        <!-- Loop Through String -->
+        <section class="card">
+            <h2>Loop Through a String</h2>
+
+            <p>
+                You can loop through each character of a string.
+            </p>
+
+            <div class="code-box">
+<pre>
+word = "Python"
+
+for letter in word:
+    print(letter)
+</pre>
+            </div>
+        </section>
+
+        <!-- Nested Loops -->
+        <section class="card">
+            <h2>Nested Loops</h2>
+
+            <p>
+                A loop inside another loop is called a nested loop.
+            </p>
+
+            <div class="code-box">
+<pre>
+for i in range(1, 4):
+
+    for j in range(1, 4):
+        print(i, j)
+</pre>
+            </div>
+        </section>
+
+        <!-- Loop Control -->
+        <section class="card">
+            <h2>Loop Control Statements</h2>
+
+            <div class="grid">
+
+                <div class="feature-box">
+                    <h3>break</h3>
+
+                    <p>
+                        Stops the loop immediately.
+                    </p>
+
+<pre>
+for i in range(5):
+
+    if i == 3:
+        break
+
+    print(i)
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>continue</h3>
+
+                    <p>
+                        Skips the current iteration.
+                    </p>
+
+<pre>
+for i in range(5):
+
+    if i == 2:
+        continue
+
+    print(i)
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>pass</h3>
+
+                    <p>
+                        Placeholder statement for future code.
+                    </p>
+
+<pre>
+for i in range(5):
+    pass
+</pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Range Function -->
+        <section class="card">
+            <h2>The range() Function</h2>
+
+            <p>
+                The <strong>range()</strong> function generates a sequence of numbers.
+            </p>
+
+            <div class="table-container">
+
+                <table>
+
+                    <tr>
+                        <th>Example</th>
+                        <th>Description</th>
+                    </tr>
+
+                    <tr>
+                        <td>range(5)</td>
+                        <td>0 to 4</td>
+                    </tr>
+
+                    <tr>
+                        <td>range(1, 6)</td>
+                        <td>1 to 5</td>
+                    </tr>
+
+                    <tr>
+                        <td>range(1, 10, 2)</td>
+                        <td>Odd numbers from 1 to 9</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </section>
+
+        <!-- Else with Loop -->
+        <section class="card">
+            <h2>Using else with Loops</h2>
+
+            <p>
+                Python allows an <strong>else</strong> block with loops.
+            </p>
+
+            <div class="code-box">
+<pre>
+for i in range(5):
+    print(i)
+
+else:
+    print("Loop Finished")
+</pre>
+            </div>
+        </section>
+
+        <!-- Real Life Example -->
+        <section class="card">
+            <h2>Real-Life Example</h2>
+
+            <p>
+                Loops are commonly used in games, websites,
+                automation scripts, and data processing.
+            </p>
+
+            <div class="code-box">
+<pre>
+students = ["Alex", "John", "Emma"]
+
+for student in students:
+    print("Welcome", student)
+</pre>
+            </div>
+        </section>
+
+        <!-- Important Notes -->
+        <section class="card">
+            <h2>Important Notes</h2>
+
+            <ul>
+                <li>Loops reduce repetitive code</li>
+                <li>Indentation is important in Python loops</li>
+                <li>Infinite loops can crash programs</li>
+                <li>Loops improve automation and efficiency</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

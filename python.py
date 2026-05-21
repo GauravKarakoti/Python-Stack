@@ -1,11 +1,16 @@
-5 == 5
+age = 25
+citizen = True
 
-5 != 3
+if age >= 18 and citizen:
+    print("Eligible")
 
-10 > 5
+isWeekend = True
+isHoliday = False
 
-2 < 8
+if isWeekend or isHoliday:
+    print("Relax")
 
-5 >= 5
+loggedIn = False
 
-3 <= 9
+if not loggedIn:
+    print("Please Login")

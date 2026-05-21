@@ -1,284 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Conditionals</title>
-
-    <link rel="stylesheet" href="conditionals.css" />
-</head>
-<body>
-
-    <!-- Hero Section -->
+<div class="conditionals-wrapper">
     <header class="hero">
         <h1>Python Conditional Statements</h1>
-        <p>
-            Learn how Python makes decisions using conditional statements.
-        </p>
+        <p>Learn how Python makes decisions using conditional statements.</p>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
-
-        <!-- Introduction -->
         <section class="card">
             <h2>What are Conditional Statements?</h2>
-
-            <p>
-                Conditional statements are used to perform different actions
-                based on different conditions.
-            </p>
-
-            <p>
-                Python uses keywords like <strong>if</strong>,
-                <strong>elif</strong>, and <strong>else</strong>
-                to control the flow of a program.
-            </p>
-
+            <p>Conditional statements are used to perform different actions based on different conditions.</p>
+            <p>Python uses keywords like <strong>if</strong>, <strong>elif</strong>, and <strong>else</strong> to control the flow of a program.</p>
             <div class="info-box">
-                <strong>Example:</strong>
-                If a student scores more than 40 marks,
-                they pass the exam.
+                <strong>Example:</strong> If a student scores more than 40 marks, they pass the exam.
             </div>
         </section>
 
-        <!-- if Statement -->
         <section class="card">
             <h2>The if Statement</h2>
-
-            <p>
-                The <strong>if</strong> statement executes a block of code
-                only if the condition is true.
-            </p>
-
-            <div class="code-box">
-<pre>
-age = 18
-
-if age >= 18:
-    print("You are eligible to vote")
-</pre>
-            </div>
+            <p>The <strong>if</strong> statement executes a block of code only if the condition is true.</p>
+            <iframe src="https://trinket.io/embed/python/33017e78371c" width="100%" height="220" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
-        <!-- else Statement -->
         <section class="card">
             <h2>The else Statement</h2>
-
-            <p>
-                The <strong>else</strong> statement executes when
-                the condition inside the if statement is false.
-            </p>
-
-            <div class="code-box">
-<pre>
-age = 15
-
-if age >= 18:
-    print("Eligible")
-
-else:
-    print("Not Eligible")
-</pre>
-            </div>
+            <p>The <strong>else</strong> statement executes when the condition inside the if statement is false.</p>
+            <iframe src="https://trinket.io/embed/python/4b2c7f57ad6c" width="100%" height="230" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
-        <!-- elif Statement -->
         <section class="card">
             <h2>The elif Statement</h2>
-
-            <p>
-                The <strong>elif</strong> statement allows checking
-                multiple conditions.
-            </p>
-
-            <div class="code-box">
-<pre>
-marks = 75
-
-if marks >= 90:
-    print("Grade A")
-
-elif marks >= 70:
-    print("Grade B")
-
-else:
-    print("Grade C")
-</pre>
-            </div>
+            <p>The <strong>elif</strong> statement allows checking multiple conditions.</p>
+            <iframe src="https://trinket.io/embed/python/f91a1d081ec0" width="100%" height="240" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
-        <!-- Nested Conditionals -->
         <section class="card">
             <h2>Nested Conditional Statements</h2>
-
-            <p>
-                You can place one conditional statement inside another.
-            </p>
-
-            <div class="code-box">
-<pre>
-age = 20
-hasID = True
-
-if age >= 18:
-
-    if hasID:
-        print("Entry Allowed")
-
-    else:
-        print("ID Required")
-</pre>
-            </div>
+            <p>You can place one conditional statement inside another.</p>
+            <iframe src="https://trinket.io/embed/python/421ef34b30e5" width="100%" height="240" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
-        <!-- Short Hand If -->
         <section class="card">
             <h2>Short Hand if Statement</h2>
-
-            <p>
-                Python allows writing simple if statements in one line.
-            </p>
-
-            <div class="code-box">
-<pre>
-age = 20
-
-if age >= 18:
-    print("Adult")
-</pre>
-            </div>
+            <p>Python allows writing simple if statements in one line.</p>
+            <iframe src="https://trinket.io/embed/python/b4c52c94e532" width="100%" height="220" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
-        <!-- Logical Operators -->
         <section class="card">
             <h2>Using Logical Operators</h2>
-
-            <p>
-                Logical operators help combine multiple conditions.
-            </p>
-
+            <p>Logical operators help combine multiple conditions.</p>
             <div class="grid">
-
                 <div class="feature-box">
                     <h3>AND Operator</h3>
+<pre><div class="code-box"><span class="aqua">age</span> = <span class="beige">25</span>
+<span class="aqua">citizen</span> = <span class="blue">True</span>
 
-<pre>
-age = 25
-citizen = True
-
-if age >= 18 and citizen:
-    print("Eligible")
-</pre>
+<span class="pink">if</span> <span class="aqua">age</span> >= <span class="beige">18</span> <span class="blue">and</span> <span class="aqua">citizen</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Eligible"</span><span class="yellow">)</span></div></pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>OR Operator</h3>
+<pre><div class="code-box"><span class="aqua">isWeekend</span> = <span class="blue">True</span>
+<span class="aqua">isHoliday</span> = <span class="blue">False</span>
 
-<pre>
-isWeekend = True
-isHoliday = False
-
-if isWeekend or isHoliday:
-    print("Relax")
-</pre>
+<span class="pink">if</span> <span class="aqua">isWeekend</span> <span class="blue">or</span> <span class="aqua">isHoliday</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Relax"</span><span class="yellow">)</span></div></pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>NOT Operator</h3>
+<pre><div class="code-box"><span class="aqua">loggedIn</span> = <span class="blue">False</span>
 
-<pre>
-loggedIn = False
-
-if not loggedIn:
-    print("Please Login")
-</pre>
+<span class="pink">if</span> <span class="blue">not</span> <span class="aqua">loggedIn</span>:
+    <span class="bisque">print</span><span class="yellow">(</span><span class="brown">"Please Login"</span><span class="yellow">)</span></div></pre>
                 </div>
-
             </div>
         </section>
 
-        <!-- Comparison Operators -->
         <section class="card">
             <h2>Comparison Operators in Conditions</h2>
-
             <div class="table-container">
-
                 <table>
-
                     <tr>
                         <th>Operator</th>
                         <th>Meaning</th>
                         <th>Example</th>
                     </tr>
-
                     <tr>
                         <td>==</td>
                         <td>Equal To</td>
                         <td>x == y</td>
                     </tr>
-
                     <tr>
                         <td>!=</td>
                         <td>Not Equal To</td>
                         <td>x != y</td>
                     </tr>
-
                     <tr>
                         <td>&gt;</td>
                         <td>Greater Than</td>
                         <td>x > y</td>
                     </tr>
-
                     <tr>
                         <td>&lt;</td>
                         <td>Less Than</td>
                         <td>x < y</td>
                     </tr>
-
                     <tr>
                         <td>&gt;=</td>
                         <td>Greater Than or Equal To</td>
                         <td>x >= y</td>
                     </tr>
-
                     <tr>
                         <td>&lt;=</td>
                         <td>Less Than or Equal To</td>
                         <td>x <= y</td>
                     </tr>
-
                 </table>
-
             </div>
         </section>
 
-        <!-- Real Life Example -->
         <section class="card">
             <h2>Real-Life Example</h2>
-
-            <p>
-                Conditional statements are used everywhere in software applications.
-            </p>
-
-            <div class="code-box">
-<pre>
-username = "admin"
-password = "1234"
-
-if username == "admin" and password == "1234":
-    print("Login Successful")
-
-else:
-    print("Invalid Credentials")
-</pre>
-            </div>
+            <p>Conditional statements are used everywhere in software applications.</p>
+            <iframe src="https://trinket.io/embed/python/d9d8ff1c4d7e" width="100%" height="240" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
-        <!-- Important Notes -->
         <section class="card">
             <h2>Important Notes</h2>
-
             <ul>
                 <li>Python uses indentation to define blocks of code</li>
                 <li>Conditions return either True or False</li>
@@ -287,5 +133,4 @@ else:
             </ul>
         </section>
     </main>
-</body>
-</html>
+</div>
