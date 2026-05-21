@@ -20,20 +20,20 @@
                 <div class="feature-box">
                     <h3>Integer (int)</h3>
                     <p>Stores whole numbers.</p>
-<pre>age = 21
-print(type(age))</pre>
+<pre><div class="code-box"><span class="aqua">age</span> = <span class="beige">21</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="green">type</span><span class="pink">(</span><span class="aqua">age</span><span class="pink">)</span><span class="yellow">)</span></div></pre>
                 </div>
                 <div class="feature-box">
                     <h3>Float (float)</h3>
                     <p>Stores decimal values.</p>
-<pre>price = 99.99
-print(type(price))</pre>
+<pre><div class="code-box"><span class="aqua">price</span> = <span class="beige">99.99</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="green">type</span><span class="pink">(</span><span class="aqua">price</span><span class="pink">)</span><span class="yellow">)</span></div></pre>
                 </div>
                 <div class="feature-box">
                     <h3>Complex (complex)</h3>
                     <p>Stores complex numbers.</p>
-<pre>num = 4 + 5j
-print(type(num))</pre>
+<pre><div class="code-box"><span class="aqua">num</span> = <span class="beige">4</span> + <span class="beige">5</span><span class="blue">j</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="green">type</span><span class="pink">(</span><span class="aqua">num</span><span class="pink">)</span><span class="yellow">)</span></div></pre>
                 </div>
             </div>
         </section>
@@ -43,8 +43,8 @@ print(type(num))</pre>
             <div class="feature-box">
                 <h3>String (str)</h3>
                 <p>Strings are used to store text values.</p>
-<pre>name = "Python"
-print(type(name))</pre>
+<pre><div class="code-box"><span class="aqua">name</span> = <span class="brown">"Python"</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="green">type</span><span class="pink">(</span><span class="aqua">name</span><span class="pink">)</span><span class="yellow">)</span></div></pre>
             </div>
         </section>
 
@@ -54,17 +54,17 @@ print(type(name))</pre>
                 <div class="feature-box">
                     <h3>List</h3>
                     <p>Ordered and changeable collection.</p>
-<pre>fruits = ["Apple", "Mango", "Banana"]</pre>
+<pre><div class="code-box"><span class="aqua">fruits</span> = <span class="yellow">[</span><span class="brown">"Apple"</span>, <span class="brown">"Mango"</span>, <span class="brown">"Banana"</span><span class="yellow">]</span></div></pre>
                 </div>
                 <div class="feature-box">
                     <h3>Tuple</h3>
                     <p>Ordered but unchangeable collection.</p>
-<pre>colors = ("Red", "Blue", "Green")</pre>
+<pre><div class="code-box"><span class="aqua">colors</span> = <span class="yellow">(</span><span class="brown">"Red"</span>, <span class="brown">"Blue"</span>, <span class="brown">"Green"</span><span class="yellow">)</span></div></pre>
                 </div>
                 <div class="feature-box">
                     <h3>Range</h3>
                     <p>Represents a sequence of numbers.</p>
-<pre>numbers = range(5)</pre>
+<pre><div class="code-box"><span class="aqua">numbers</span> = range<span class="yellow">(</span><span class="beige">5</span><span class="yellow">)</span></div></pre>
                 </div>
             </div>
         </section>
@@ -74,10 +74,10 @@ print(type(name))</pre>
             <div class="feature-box">
                 <h3>Dictionary (dict)</h3>
                 <p>Stores data in key-value pairs.</p>
-<pre>student = {
-    "name": "Alex",
-    "age": 20
-}</pre>
+<pre><div class="code-box"><span class="aqua">student</span> = <span class="yellow">{</span>
+    <span class="brown">"name"</span>: <span class="brown">"Alex"</span>,
+    <span class="brown">"age"</span>: <span class="beige">20</span>
+<span class="yellow">}</span></div></pre>
             </div>
         </section>
 
@@ -87,12 +87,12 @@ print(type(name))</pre>
                 <div class="feature-box">
                     <h3>Set</h3>
                     <p>Unordered collection of unique values.</p>
-<pre>numbers = {1, 2, 3, 4}</pre>
+<pre><div class="code-box"><span class="aqua">numbers</span> = <span class="yellow">{</span><span class="beige">1</span>, <span class="beige">2</span>, <span class="beige">3</span>, <span class="beige">4</span><span class="yellow">}</span></div></pre>
                 </div>
                 <div class="feature-box">
                     <h3>Frozen Set</h3>
                     <p>Immutable version of a set.</p>
-<pre>data = frozenset({1, 2, 3})</pre>
+<pre><div class="code-box"><span class="aqua">data</span> = <span class="green">frozenset</span><span class="yellow">(</span><span class="pink">{</span><span class="beige">1</span>, <span class="beige">2</span>, <span class="beige">3</span><span class="pink">}</span><span class="yellow">)</span></div></pre>
                 </div>
             </div>
         </section>
@@ -102,33 +102,21 @@ print(type(name))</pre>
             <div class="feature-box">
                 <h3>Boolean (bool)</h3>
                 <p>Stores either True or False.</p>
-<pre>isPythonFun = True
-print(type(isPythonFun))</pre>
+<pre><div class="code-box"><span class="aqua">isPythonFun</span> = <span class="blue">True</span>
+<span class="bisque">print</span><span class="yellow">(</span><span class="green">type</span><span class="pink">(</span><span class="aqua">isPythonFun</span><span class="pink">)</span><span class="yellow">)</span></div></pre>
             </div>
         </section>
 
         <section class="card">
             <h2>Checking Data Types</h2>
             <p>Python provides the <strong>type()</strong> function to check the data type of a variable.</p>
-            <div class="code-box">
-<pre>x = 10
-print(type(x))
-
-y = "Hello"
-print(type(y))</pre>
-            </div>
+            <iframe src="https://trinket.io/embed/python/69891dbe5f08" width="100%" height="220" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
         <section class="card">
             <h2>Type Conversion</h2>
             <p>You can convert one data type into another using built-in functions.</p>
-            <div class="code-box">
-<pre>age = "20"
-convertedAge = int(age)
-
-print(convertedAge)
-print(type(convertedAge))</pre>
-            </div>
+            <iframe src="https://trinket.io/embed/python/31d2c6437339" width="100%" height="220" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
         </section>
 
         <section class="card">
