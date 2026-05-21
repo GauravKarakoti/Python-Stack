@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #f8f9fa;
+    background-color: #1e1e1e;
 }
 
 header {
@@ -161,28 +161,28 @@ header img {
     flex: 1;
     overflow-y: auto;
     padding: 3rem;
-    background-color: #f8f9fa;
+    background-color: #1e1e1e;
 }
 
 .content-inner {
     max-width: 800px;
     margin: 0 auto;
-    background: white;
+    background: #2c2c2c;
     padding: 3rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .content h2 {
-    color: #2c3e50;
+    color: #4CAF50;
     margin-bottom: 1.5rem;
     font-size: 2.2rem;
-    border-bottom: 2px solid #edf2f7;
+    border-bottom: 2px solid #444;
     padding-bottom: 1rem;
 }
 
 .content p {
-    color: #4a5568;
+    color: #ccc;
     line-height: 1.8;
     font-size: 1.1rem;
 }
