@@ -1,16 +1,14 @@
-age = 25
-citizen = True
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
 
-if age >= 18 and citizen:
-    print("Eligible")
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
 
-isWeekend = True
-isHoliday = False
+for i in range(5):
+    pass
 
-if isWeekend or isHoliday:
-    print("Relax")
-
-loggedIn = False
-
-if not loggedIn:
-    print("Please Login")
+I have a file by the name of functions.html now please generate a similar code for it and format this so it looks nice and save the css code in a seperate file
