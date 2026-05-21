@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Operators</title>
+
+    <link rel="stylesheet" href="operators.css" />
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Python Operators</h1>
+        <p>
+            Learn how Python operators are used to perform operations on variables and values.
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Introduction -->
+        <section class="card">
+            <h2>What are Operators?</h2>
+
+            <p>
+                Operators are special symbols used to perform operations on variables and values.
+            </p>
+
+            <p>
+                Python provides different types of operators for mathematical calculations,
+                comparisons, logical operations, and more.
+            </p>
+
+            <div class="info-box">
+                <strong>Example:</strong>
+                In <code>5 + 3</code>, the <code>+</code> symbol is an operator.
+            </div>
+        </section>
+
+        <!-- Arithmetic Operators -->
+        <section class="card">
+            <h2>Arithmetic Operators</h2>
+
+            <p>
+                Arithmetic operators are used for mathematical calculations.
+            </p>
+
+            <div class="table-container">
+
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Name</th>
+                        <th>Example</th>
+                    </tr>
+
+                    <tr>
+                        <td>+</td>
+                        <td>Addition</td>
+                        <td>5 + 3</td>
+                    </tr>
+
+                    <tr>
+                        <td>-</td>
+                        <td>Subtraction</td>
+                        <td>10 - 2</td>
+                    </tr>
+
+                    <tr>
+                        <td>*</td>
+                        <td>Multiplication</td>
+                        <td>4 * 5</td>
+                    </tr>
+
+                    <tr>
+                        <td>/</td>
+                        <td>Division</td>
+                        <td>20 / 4</td>
+                    </tr>
+
+                    <tr>
+                        <td>%</td>
+                        <td>Modulus</td>
+                        <td>10 % 3</td>
+                    </tr>
+
+                    <tr>
+                        <td>**</td>
+                        <td>Exponentiation</td>
+                        <td>2 ** 3</td>
+                    </tr>
+
+                    <tr>
+                        <td>//</td>
+                        <td>Floor Division</td>
+                        <td>10 // 3</td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="code-box">
+<pre>
+x = 10
+y = 3
+
+print(x + y)
+print(x - y)
+print(x * y)
+print(x / y)
+print(x % y)
+</pre>
+            </div>
+        </section>
+
+        <!-- Assignment Operators -->
+        <section class="card">
+            <h2>Assignment Operators</h2>
+
+            <p>
+                Assignment operators are used to assign values to variables.
+            </p>
+
+            <div class="code-box">
+<pre>
+x = 5
+
+x += 3
+print(x)
+
+x -= 2
+print(x)
+
+x *= 4
+print(x)
+</pre>
+            </div>
+        </section>
+
+        <!-- Comparison Operators -->
+        <section class="card">
+            <h2>Comparison Operators</h2>
+
+            <p>
+                Comparison operators compare two values and return either True or False.
+            </p>
+
+            <div class="grid">
+
+                <div class="feature-box">
+                    <h3>Equal To</h3>
+
+<pre>
+5 == 5
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Not Equal To</h3>
+
+<pre>
+5 != 3
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Greater Than</h3>
+
+<pre>
+10 > 5
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Less Than</h3>
+
+<pre>
+2 < 8
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Greater Than or Equal</h3>
+
+<pre>
+5 >= 5
+</pre>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Less Than or Equal</h3>
+
+<pre>
+3 <= 9
+</pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Logical Operators -->
+        <section class="card">
+            <h2>Logical Operators</h2>
+
+            <p>
+                Logical operators are used to combine conditional statements.
+            </p>
+
+            <div class="code-container">
+
+                <div class="code-box">
+                    <h3>AND Operator</h3>
+
+<pre>
+x = 5
+
+print(x > 2 and x < 10)
+</pre>
+                </div>
+
+                <div class="code-box">
+                    <h3>OR Operator</h3>
+
+<pre>
+x = 5
+
+print(x > 2 or x > 10)
+</pre>
+                </div>
+
+                <div class="code-box">
+                    <h3>NOT Operator</h3>
+
+<pre>
+x = 5
+
+print(not(x > 2))
+</pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Identity Operators -->
+        <section class="card">
+            <h2>Identity Operators</h2>
+
+            <p>
+                Identity operators compare memory locations of two objects.
+            </p>
+
+            <div class="code-box">
+<pre>
+x = ["apple", "banana"]
+y = x
+z = ["apple", "banana"]
+
+print(x is y)
+print(x is z)
+
+print(x is not z)
+</pre>
+            </div>
+        </section>
+
+        <!-- Membership Operators -->
+        <section class="card">
+            <h2>Membership Operators</h2>
+
+            <p>
+                Membership operators check whether a value exists in a sequence.
+            </p>
+
+            <div class="code-box">
+<pre>
+fruits = ["apple", "banana", "mango"]
+
+print("apple" in fruits)
+print("grapes" not in fruits)
+</pre>
+            </div>
+        </section>
+
+        <!-- Bitwise Operators -->
+        <section class="card">
+            <h2>Bitwise Operators</h2>
+
+            <p>
+                Bitwise operators work on binary numbers.
+            </p>
+
+            <div class="table-container">
+
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Name</th>
+                    </tr>
+
+                    <tr>
+                        <td>&</td>
+                        <td>AND</td>
+                    </tr>
+
+                    <tr>
+                        <td>|</td>
+                        <td>OR</td>
+                    </tr>
+
+                    <tr>
+                        <td>^</td>
+                        <td>XOR</td>
+                    </tr>
+
+                    <tr>
+                        <td>~</td>
+                        <td>NOT</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;&lt;</td>
+                        <td>Left Shift</td>
+                    </tr>
+
+                    <tr>
+                        <td>&gt;&gt;</td>
+                        <td>Right Shift</td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
+
+        <!-- Operator Precedence -->
+        <section class="card">
+            <h2>Operator Precedence</h2>
+
+            <p>
+                Operator precedence determines which operation is performed first.
+            </p>
+
+            <div class="code-box">
+<pre>
+result = 5 + 2 * 3
+
+print(result)
+</pre>
+            </div>
+
+            <div class="info-box">
+                Multiplication is performed before addition because it has higher precedence.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

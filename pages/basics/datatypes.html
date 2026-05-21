@@ -1,321 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Data Types</title>
-
-    <link rel="stylesheet" href="datatypes.css" />
-</head>
-<body>
-
-    <!-- Hero Section -->
+<div class="datatypes-wrapper">
     <header class="hero">
         <h1>Python Data Types</h1>
-        <p>
-            Understand the different types of data used in Python programming.
-        </p>
+        <p>Understand the different types of data used in Python programming.</p>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
-
-        <!-- Introduction -->
+    <div class="container">
         <section class="card">
             <h2>What are Data Types?</h2>
-
-            <p>
-                Data types define the type of value a variable can store in Python.
-            </p>
-
-            <p>
-                Python automatically identifies the data type based on the assigned value.
-            </p>
-
+            <p>Data types define the type of value a variable can store in Python.</p>
+            <p>Python automatically identifies the data type based on the assigned value.</p>
             <div class="info-box">
-                <strong>Good to Know:</strong>
-                Python is a dynamically typed programming language.
+                <strong>Good to Know:</strong> Python is a dynamically typed programming language.
             </div>
         </section>
 
-        <!-- Numeric Types -->
         <section class="card">
             <h2>Numeric Data Types</h2>
-
             <div class="grid">
-
                 <div class="feature-box">
                     <h3>Integer (int)</h3>
                     <p>Stores whole numbers.</p>
-
-<pre>
-age = 21
-print(type(age))
-</pre>
+<pre>age = 21
+print(type(age))</pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>Float (float)</h3>
                     <p>Stores decimal values.</p>
-
-<pre>
-price = 99.99
-print(type(price))
-</pre>
+<pre>price = 99.99
+print(type(price))</pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>Complex (complex)</h3>
                     <p>Stores complex numbers.</p>
-
-<pre>
-num = 4 + 5j
-print(type(num))
-</pre>
+<pre>num = 4 + 5j
+print(type(num))</pre>
                 </div>
-
             </div>
         </section>
 
-        <!-- Text Type -->
         <section class="card">
             <h2>Text Data Type</h2>
-
             <div class="feature-box">
                 <h3>String (str)</h3>
-
-                <p>
-                    Strings are used to store text values.
-                </p>
-
-<pre>
-name = "Python"
-print(type(name))
-</pre>
+                <p>Strings are used to store text values.</p>
+<pre>name = "Python"
+print(type(name))</pre>
             </div>
         </section>
 
-        <!-- Sequence Types -->
         <section class="card">
             <h2>Sequence Data Types</h2>
-
             <div class="grid">
-
                 <div class="feature-box">
                     <h3>List</h3>
-
-                    <p>
-                        Ordered and changeable collection.
-                    </p>
-
-<pre>
-fruits = ["Apple", "Mango", "Banana"]
-</pre>
+                    <p>Ordered and changeable collection.</p>
+<pre>fruits = ["Apple", "Mango", "Banana"]</pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>Tuple</h3>
-
-                    <p>
-                        Ordered but unchangeable collection.
-                    </p>
-
-<pre>
-colors = ("Red", "Blue", "Green")
-</pre>
+                    <p>Ordered but unchangeable collection.</p>
+<pre>colors = ("Red", "Blue", "Green")</pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>Range</h3>
-
-                    <p>
-                        Represents a sequence of numbers.
-                    </p>
-
-<pre>
-numbers = range(5)
-</pre>
+                    <p>Represents a sequence of numbers.</p>
+<pre>numbers = range(5)</pre>
                 </div>
-
             </div>
         </section>
 
-        <!-- Mapping Type -->
         <section class="card">
             <h2>Mapping Data Type</h2>
-
             <div class="feature-box">
                 <h3>Dictionary (dict)</h3>
-
-                <p>
-                    Stores data in key-value pairs.
-                </p>
-
-<pre>
-student = {
+                <p>Stores data in key-value pairs.</p>
+<pre>student = {
     "name": "Alex",
     "age": 20
-}
-</pre>
+}</pre>
             </div>
         </section>
 
-        <!-- Set Types -->
         <section class="card">
             <h2>Set Data Types</h2>
-
             <div class="grid">
-
                 <div class="feature-box">
                     <h3>Set</h3>
-
-                    <p>
-                        Unordered collection of unique values.
-                    </p>
-
-<pre>
-numbers = {1, 2, 3, 4}
-</pre>
+                    <p>Unordered collection of unique values.</p>
+<pre>numbers = {1, 2, 3, 4}</pre>
                 </div>
-
                 <div class="feature-box">
                     <h3>Frozen Set</h3>
-
-                    <p>
-                        Immutable version of a set.
-                    </p>
-
-<pre>
-data = frozenset({1, 2, 3})
-</pre>
+                    <p>Immutable version of a set.</p>
+<pre>data = frozenset({1, 2, 3})</pre>
                 </div>
-
             </div>
         </section>
 
-        <!-- Boolean -->
         <section class="card">
             <h2>Boolean Data Type</h2>
-
             <div class="feature-box">
                 <h3>Boolean (bool)</h3>
-
-                <p>
-                    Stores either True or False.
-                </p>
-
-<pre>
-isPythonFun = True
-print(type(isPythonFun))
-</pre>
+                <p>Stores either True or False.</p>
+<pre>isPythonFun = True
+print(type(isPythonFun))</pre>
             </div>
         </section>
 
-        <!-- Checking Data Type -->
         <section class="card">
             <h2>Checking Data Types</h2>
-
-            <p>
-                Python provides the <strong>type()</strong> function to check the data type of a variable.
-            </p>
-
+            <p>Python provides the <strong>type()</strong> function to check the data type of a variable.</p>
             <div class="code-box">
-<pre>
-x = 10
+<pre>x = 10
 print(type(x))
 
 y = "Hello"
-print(type(y))
-</pre>
+print(type(y))</pre>
             </div>
         </section>
 
-        <!-- Type Conversion -->
         <section class="card">
             <h2>Type Conversion</h2>
-
-            <p>
-                You can convert one data type into another using built-in functions.
-            </p>
-
+            <p>You can convert one data type into another using built-in functions.</p>
             <div class="code-box">
-<pre>
-age = "20"
-
+<pre>age = "20"
 convertedAge = int(age)
 
 print(convertedAge)
-print(type(convertedAge))
-</pre>
+print(type(convertedAge))</pre>
             </div>
         </section>
 
-        <!-- Summary Table -->
         <section class="card">
             <h2>Summary of Python Data Types</h2>
-
             <div class="table-container">
-
                 <table>
                     <tr>
                         <th>Data Type</th>
                         <th>Example</th>
                     </tr>
-
                     <tr>
                         <td>int</td>
                         <td>10</td>
                     </tr>
-
                     <tr>
                         <td>float</td>
                         <td>10.5</td>
                     </tr>
-
                     <tr>
                         <td>str</td>
                         <td>"Hello"</td>
                     </tr>
-
                     <tr>
                         <td>list</td>
                         <td>[1, 2, 3]</td>
                     </tr>
-
                     <tr>
                         <td>tuple</td>
                         <td>(1, 2, 3)</td>
                     </tr>
-
                     <tr>
                         <td>dict</td>
                         <td>{"name": "Alex"}</td>
                     </tr>
-
                     <tr>
                         <td>set</td>
                         <td>{1, 2, 3}</td>
                     </tr>
-
                     <tr>
                         <td>bool</td>
                         <td>True</td>
                     </tr>
                 </table>
-
             </div>
         </section>
-
-        <!-- Button -->
-        <section class="center">
-            <button id="datatypeBtn">
-                Explore More Data Types
-            </button>
-        </section>
-
-    </main>
-
-    <script src="datatypes.js"></script>
-
-</body>
-</html>
+    </div>
+</div>

@@ -124,6 +124,22 @@
     font-family: monospace;
 }
 
+.variables-wrapper .code-box.valid {
+    background: #15b307;
+}
+
+.variables-wrapper .code-box.valid h3 {
+    color: #042d0d;
+}
+
+.variables-wrapper .code-box.invalid {
+    background: #b3074f;
+}
+
+.variables-wrapper .code-box.invalid h3 {
+    color: #2d0415;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .variables-wrapper .hero h1 {
