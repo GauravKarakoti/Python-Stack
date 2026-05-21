@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Functions</title>
+
+    <link rel="stylesheet" href="functions.css" />
+</head>
+<body>
+
+    <!-- Hero Section -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+            <h1>Python Functions</h1>
+
+            <p>
+                Learn how to create reusable blocks of code using Python functions.
+            </p>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+
+    <main class="container">
+
+        <!-- Introduction -->
+
+        <section class="card">
+
+            <h2>What are Functions?</h2>
+
+            <p>
+                Functions are reusable blocks of code that perform a specific task.
+                Instead of writing the same code multiple times, functions allow you
+                to organize and reuse your code efficiently.
+            </p>
+
+            <p>
+                Functions improve readability, reduce repetition, and make programs
+                easier to manage.
+            </p>
+
+            <div class="info-box">
+                <strong>Example:</strong>
+                A function can calculate marks, print messages, or perform mathematical operations.
+            </div>
+
+        </section>
+
+        <!-- Creating Functions -->
+
+        <section class="card">
+
+            <h2>Creating a Function</h2>
+
+            <p>
+                In Python, functions are created using the
+                <strong>def</strong> keyword.
+            </p>
+
+            <div class="code-box">
+<pre>
+def greet():
+
+    print("Welcome to Python")
+
+greet()
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Function Parameters -->
+
+        <section class="card">
+
+            <h2>Function Parameters</h2>
+
+            <p>
+                Parameters allow values to be passed into a function.
+            </p>
+
+            <div class="code-box">
+<pre>
+def greet(name):
+
+    print("Hello", name)
+
+greet("Alex")
+greet("Emma")
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Multiple Parameters -->
+
+        <section class="card">
+
+            <h2>Multiple Parameters</h2>
+
+            <div class="code-box">
+<pre>
+def student(name, age):
+
+    print(name)
+    print(age)
+
+student("John", 20)
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Return Statement -->
+
+        <section class="card">
+
+            <h2>Return Statement</h2>
+
+            <p>
+                The <strong>return</strong> keyword sends a value back from a function.
+            </p>
+
+            <div class="code-box">
+<pre>
+def add(a, b):
+
+    return a + b
+
+result = add(5, 3)
+
+print(result)
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Default Parameters -->
+
+        <section class="card">
+
+            <h2>Default Parameters</h2>
+
+            <p>
+                Functions can have default parameter values.
+            </p>
+
+            <div class="code-box">
+<pre>
+def country(name = "India"):
+
+    print(name)
+
+country()
+country("Canada")
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Arbitrary Arguments -->
+
+        <section class="card">
+
+            <h2>Arbitrary Arguments (*args)</h2>
+
+            <p>
+                <strong>*args</strong> allows functions to accept multiple values.
+            </p>
+
+            <div class="code-box">
+<pre>
+def numbers(*num):
+
+    print(num)
+
+numbers(1, 2, 3, 4)
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Keyword Arguments -->
+
+        <section class="card">
+
+            <h2>Keyword Arguments</h2>
+
+            <p>
+                Keyword arguments make function calls more readable.
+            </p>
+
+            <div class="code-box">
+<pre>
+def student(name, age):
+
+    print(name)
+    print(age)
+
+student(age = 20, name = "Alex")
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Lambda Functions -->
+
+        <section class="card">
+
+            <h2>Lambda Functions</h2>
+
+            <p>
+                Lambda functions are small anonymous functions.
+            </p>
+
+            <div class="code-box">
+<pre>
+square = lambda x: x * x
+
+print(square(5))
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Recursive Functions -->
+
+        <section class="card">
+
+            <h2>Recursive Functions</h2>
+
+            <p>
+                A recursive function calls itself repeatedly.
+            </p>
+
+            <div class="code-box">
+<pre>
+def countdown(n):
+
+    if n == 0:
+        return
+
+    print(n)
+
+    countdown(n - 1)
+
+countdown(5)
+</pre>
+            </div>
+
+        </section>
+
+        <!-- Benefits -->
+
+        <section class="card">
+
+            <h2>Benefits of Functions</h2>
+
+            <div class="grid">
+
+                <div class="feature-box">
+                    <h3>Reusable</h3>
+
+                    <p>
+                        Write code once and use it multiple times.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Organized</h3>
+
+                    <p>
+                        Makes programs cleaner and easier to understand.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Efficient</h3>
+
+                    <p>
+                        Reduces repetition and improves development speed.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Easy Debugging</h3>
+
+                    <p>
+                        Errors are easier to locate and fix.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Function Types -->
+
+        <section class="card">
+
+            <h2>Types of Functions</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <tr>
+                        <th>Function Type</th>
+                        <th>Description</th>
+                    </tr>
+
+                    <tr>
+                        <td>Built-in Function</td>
+                        <td>Functions already provided by Python</td>
+                    </tr>
+
+                    <tr>
+                        <td>User-defined Function</td>
+                        <td>Functions created by programmers</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lambda Function</td>
+                        <td>Small anonymous function</td>
+                    </tr>
+
+                    <tr>
+                        <td>Recursive Function</td>
+                        <td>Function that calls itself</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Important Notes -->
+
+        <section class="card">
+
+            <h2>Important Notes</h2>
+
+            <ul>
+                <li>Functions improve code reusability</li>
+                <li>Python uses indentation inside functions</li>
+                <li>Functions can return values</li>
+                <li>Functions can accept multiple arguments</li>
+                <li>Meaningful function names improve readability</li>
+            </ul>
+
+        </section>
+    </main>
+</body>
+</html>
