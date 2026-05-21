@@ -41,7 +41,7 @@
 .intro-container {
     width: 100%;
     max-width: 1250px;
-    margin: 50px auto;
+    margin: 50px auto 10px auto;
     display: block;
 }
 
@@ -146,6 +146,10 @@
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 600;
+}
+
+.code-box.java::before {
+    content: "JAVA";
 }
 
 .code-box h3 { margin-bottom: 15px; color: #38bdf8; font-size: 1.1rem; }

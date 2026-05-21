@@ -45,7 +45,7 @@
 .datatypes-wrapper .container {
     width: 100%;
     max-width: 1250px;
-    margin: 50px auto;
+    margin: 50px auto 10px auto;
     display: block; 
 }
 

@@ -19,6 +19,12 @@ header {
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     z-index: 20;
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    margin-right: 10px;
 }
 
 .container {
